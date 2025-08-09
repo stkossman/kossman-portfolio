@@ -1,9 +1,12 @@
 import Dither from "../blocks/Backgrounds/Dither/Dither.jsx";
 import { GoArrowUpRight } from "react-icons/go";
+import { HiSun, HiMoon } from "react-icons/hi2";
 import { Link } from 'react-router-dom';
 import { FadeInTop } from '../components/animations/FadeInTop';
+import { useTheme } from '../contexts/ThemeContext';
 
 export const Home = () => {
+    const { theme, toggleTheme } = useTheme();
 
     return (
         <div className="min-h-screen relative flex flex-col">
@@ -13,7 +16,7 @@ export const Home = () => {
                     waveSpeed={0.08}
                     waveFrequency={2.5}
                     waveAmplitude={0.4}
-                    waveColor={[0.3, 0.3, 0.3]}
+                    waveColor={theme === 'light' ? [0.7, 0.7, 0.7] : [0.3, 0.3, 0.3]}
                     colorNum={9}
                     pixelSize={2}
                     enableMouseInteraction={true}
@@ -33,6 +36,18 @@ export const Home = () => {
                                 <span className="hidden sm:inline">Andrii Stavskyi</span>
                                 <span className="sm:hidden">A. Stavskyi</span>
                             </a>
+
+                            <button
+                                onClick={toggleTheme}
+                                className="ml-4 text-white bg-black/40 hover:bg-black/50 transition-all duration-200 p-2 sm:p-2.5 rounded-full"
+                                aria-label="Toggle theme"
+                            >
+                                {theme ==='light' ? (
+                                    <HiMoon className="h-5 w-5 sm:w-6 sm:h-6" />
+                                ) : (
+                                    <HiSun className="h-5 w-5 sm:w-6 sm:h-6" />
+                                )}
+                            </button>
                         </div>
                     </div>
                 </FadeInTop>
@@ -55,7 +70,7 @@ export const Home = () => {
                             {/* pages */}
                             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6">
                                 <Link to="/about" className="flex items-center gap-2 bg-white/25 backdrop-blur-md rounded-full px-4 sm:px-6 py-3 sm:py-4 border border-white/30 w-fit hover:scale-105 transition">
-                                    <span className="text-white text-xs sm:text-sm font-medium drop-shadow-sm whitespace-nowrap">About</span><GoArrowUpRight className="text-white" />
+                                    <span className="text-white text-xs sm:text-sm font-medium drop-shadow-sm whitespace-nowrap dark">About</span><GoArrowUpRight className="text-white" />
                                 </Link>
                                 <Link to="/experience" className="flex items-center gap-2 bg-white/25 backdrop-blur-md rounded-full px-4 sm:px-6 py-3 sm:py-4 border border-white/30 w-fit hover:scale-105 transition">
                                     <span className="text-white text-xs sm:text-sm font-medium drop-shadow-sm whitespace-nowrap">Pro Experience</span><GoArrowUpRight className="text-white" />
