@@ -100,6 +100,13 @@ export const Experience = () => {
                             {[
                                 {
                                     year: "2025",
+                                    title: "Soul of CSS",
+                                    url: "https://github.com/stkossman/soul-of-css",
+                                    description: "Soul of CSS is a Souls-like (inspired by Dark Souls games) CSS framework.",
+                                    tech: "CSS • SCSS • JavaScript"
+                                },
+                                {
+                                    year: "2025",
                                     title: "sociopathic-unstable-vaccine",
                                     url: "https://github.com/stkossman/sociopathic-unstable-vaccine",
                                     description: "A merchandise website showcasing a variety of unique and edgy products.",
@@ -121,18 +128,11 @@ export const Experience = () => {
                                 },
                                 {
                                     year: "2025",
-                                    title: "Human File Size (Ruby Gem)",
+                                    title: "Human File Size",
                                     url: "https://github.com/stkossman/human_file_size",
-                                    description: "Gem for formatting file sizes into human-readable format.",
-                                    tech: "Ruby • Ruby Gem"
+                                    description: "Ruby Gem for formatting file sizes into human-readable format.",
+                                    tech: "Ruby"
                                 },
-                                {
-                                    year: "2025",
-                                    title: "Ukraine Phone Formatter",
-                                    url: "https://github.com/stkossman/ukraine_phone_formatter",
-                                    description: "Formats Ukrainian phone numbers into standardized format.",
-                                    tech: "Ruby • Ruby Gem • Python"
-                                }
                             ].map((proj, idx) => (
                                 <div key={idx} className="flex items-start gap-6">
                                     <p className="text-sm text-black/50 dark:text-white/50 w-[80px] flex-shrink-0">{proj.year}</p>
